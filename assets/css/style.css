@@ -1,0 +1,11 @@
+body{
+    background-color: black;
+}
+.hero-image{
+    background-image: url("../images/Sailor-moon-bg.jpg");
+    background-size: cover;
+    height: 500px;
+}
+.container{
+    border: 2px solid lightblue;
+}
