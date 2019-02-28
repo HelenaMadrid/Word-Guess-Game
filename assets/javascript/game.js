@@ -1,15 +1,13 @@
 var sailorMoon = ["Sailor Moon", "Sailor Mercury", "Sailor Venus", "Sailor Mars", "Sailor Jupiter", "Sailor Saturn", "Sailor Uranus", "Sailor Neptune", "Sailor Pluto", "Tuxido Mask", "Chibi Moon", "Haruka", "Michiru"];
 console.log("The Sailor Moon Array has " + sailorMoon.length + " elements.");
 
-//var saludoTres=document.getElementById("print");
-//saludoTres.textContent = "hola";
+//var userWin = document.getElementById("game");
 var numGuess = 15;
 var resultado="";
 resDos="";
 var subOne="";
 var subTwo="";
 console.log("Tienes " + numGuess + " intentos");
-//for(var i=0; i <= sailorMoon.length-1; i++){  *
 var randomItem = sailorMoon[Math.floor(Math.random()*sailorMoon.length)];
 for(var r=0; r < randomItem.length; r++){
      if(randomItem.charAt(r) === " "){
@@ -48,9 +46,9 @@ for(var r=0; r < randomItem.length; r++){
                 subTwo=resultado.substring(x+1)
                 resultado= subOne + upperLetra + subTwo;
                 console.log("subOne: " + resultado);
-                if(resultado === upperCase){
-                    randomItem = sailorMoon[Math.floor(Math.random()*sailorMoon.length)];
-                }
+               // if(resultado === upperCase){
+               //     randomItem = sailorMoon[Math.floor(Math.random()*sailorMoon.length)];
+               // }
                
             }
             else{
@@ -58,6 +56,21 @@ for(var r=0; r < randomItem.length; r++){
             }
         }
         console.log(numGuess);
-      
+        
     }
+        var userWin = document.getElementById("game");
+        userWin.textContent = resultado;
+        if(resultado === upperCase){
+            randomItem = sailorMoon[Math.floor(Math.random()*sailorMoon.length)];
+            resultado="";
+            for(var r=0; r < randomItem.length; r++){
+                if(randomItem.charAt(r) === " "){
+                      resultado+= " ";
+                }
+                   else{
+                    resultado += "X";
+               }
+           }
+        }
 }
+            
