@@ -1,8 +1,10 @@
 var sailorMoon = ["Sailor Moon", "Sailor Mercury", "Sailor Venus", "Sailor Mars", "Sailor Jupiter", "Sailor Saturn", "Sailor Uranus", "Sailor Neptune", "Sailor Pluto", "Tuxido Mask", "Chibi Moon", "Haruka", "Michiru"];
 console.log("The Sailor Moon Array has " + sailorMoon.length + " elements.");
-
+var audios=["audioOne", "audioTwo", "audioThree"];
+var audiofiles=audios[Math.floor(Math.random()*audios.length)];
 //var userWin = document.getElementById("game");
 var numGuess = 15;
+var wins=0;
 var resultado="";
 resDos="";
 var subOne="";
@@ -46,9 +48,6 @@ for(var r=0; r < randomItem.length; r++){
                 subTwo=resultado.substring(x+1)
                 resultado= subOne + upperLetra + subTwo;
                 console.log("subOne: " + resultado);
-               // if(resultado === upperCase){
-               //     randomItem = sailorMoon[Math.floor(Math.random()*sailorMoon.length)];
-               // }
                
             }
             else{
@@ -61,6 +60,10 @@ for(var r=0; r < randomItem.length; r++){
         var userWin = document.getElementById("game");
         userWin.textContent = resultado;
         if(resultado === upperCase){
+            wins++;
+            audiofiles=audios[Math.floor(Math.random()*audios.length)];
+            var music = document.getElementById(audiofiles);
+            music.play();
             randomItem = sailorMoon[Math.floor(Math.random()*sailorMoon.length)];
             resultado="";
             for(var r=0; r < randomItem.length; r++){
@@ -72,5 +75,12 @@ for(var r=0; r < randomItem.length; r++){
                }
            }
         }
+        var remainGuess=document.getElementById("tries");
+        remainGuess.textContent=numGuess;
+        var alreadyGuessed=document.getElementById("letterGuesseed");
+        alreadyGuessed.textContent+= event.key + ", " ;
+        var winsNum=document.getElementById("wins");
+        winsNum.textContent=wins;
+        
 }
             
