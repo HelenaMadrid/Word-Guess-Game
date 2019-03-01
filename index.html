@@ -3,9 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Sailor Moon Word Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="assets/javascript/game.js" type="text/javascript"></script>
 </head>
@@ -20,19 +19,18 @@
         <source src="assets/audio/SailorSaturn.mp3" type="audio/mpeg">
     </audio>
     <span id="musica"></span>
-    <!--<div class="hero-image"></div>-->
     <div class="card bg-info text-white">
         <img src="assets/images/Sailor-moon-bg.jpg" class="card-img mb-4 pb-4" alt="sailor moon background">
     </div>
     <div class="container-fluid my-4">
         <div class="row">
-            <div class="col-sm-0">
+            <div class="col-sm-0 col-md-1 col-lg-1 col-xl-1">
 
             </div>
-            <div class="col-sm-6">
-                <img src="assets/images/neptune-uranus.jpg" class="col-12  my-4">
+            <div class="col-sm-6 col-md-5 col-lg-5 col-xl-5">
+                <img src="assets/images/neptune-uranus.jpg" id="myImg" class="col-12 my-4">
             </div>
-            <div class="col-sm-6 text-dark my-4 text-center">
+            <div class="col-sm-6 col-md-5 col-lg-5 col-xl-5 text-dark my-4 text-center">
                 <h2>Press any key to get started!</h2>
                 <br>
                 <h3>Wins</h3>
@@ -48,28 +46,11 @@
                 <h3 id="tries">15</h3>
                 <br>
                 <h3>Letters Already Guessed</h3>
-                <h3 id="letterGuesseed"></h3>
+                <h3 id="letterGuessed"></h3>
             </div>
-            <div class="col-sm-0">
+            <div class="col-sm-0 col-md-1 col-lg-1 col-xl-1">
             </div>
         </div>
-      <!--  <script>
-            var userWin = document.getElementById("game");
-            userWin.textContent = resultado;
-        </script>-->
-        
-        <!--<div class="row">
-            <div class="col-6">
-
-            </div>
-
-            <div class="col-5 text-dark my-4 text-center">
-                <h2>Number of Guesses</h2>
-            </div>
-            <div class="col-1">
-                
-            </div>
-        </div>-->
     </div>
 </body>
 </html>
