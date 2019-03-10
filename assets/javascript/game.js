@@ -67,7 +67,7 @@ var chartGuessed=[""];
             console.log(user);
             console.log(upperLetra);
             
-            if(!guessed.includes(event.key)){
+            if(!guessed.includes(upperLetra)){
                 guessed += upperLetra + ", ";
             
                 if (upperCase.indexOf(upperLetra) === -1) {
@@ -77,7 +77,7 @@ var chartGuessed=[""];
 
                     if (numGuess === 0) {
                         console.log("You lost!");
-                        estadoJuego = 2;
+                        estadoJuego = 3;
                         //throw new Error("Sorry!");
                     }
                 }
@@ -124,25 +124,38 @@ var chartGuessed=[""];
                     }
                 console.log(numGuess);
                 }   
-            userWin.textContent = resultado;
-            remainGuess.textContent = numGuess;
-            alreadyGuessed.textContent = guessed;
-            } 
-            
 
-            if (resultado === upperCase) {
-                wins++;
-                var imageNames = imageArray[Math.floor(Math.random() * imageArray.length)];
-                musicPlay();
-                image.src = imageNames;
-                winsNum.textContent = wins;
-                estadoJuego = 2;
-            }
+                if (resultado === upperCase) {
+                    wins++;
+                    var imageNames = imageArray[Math.floor(Math.random() * imageArray.length)];
+                    musicPlay();
+                    image.src = imageNames;
+                    winsNum.textContent = wins;
+                    estadoJuego = 2;
+                }
+                userWin.textContent = resultado;
+                remainGuess.textContent = numGuess;
+                alreadyGuessed.textContent = guessed;
+            } 
             break;
 
         case 2: // Finalizado
             // Código cuando se presiona una tecla y el juego finalizó (ganó o perdió)
+            guessed="";
+            alreadyGuessed.textContent = "";
             musicPause(music);
+            resultado = "";
+            numGuess = 15;
+            remainGuess.textContent = numGuess;
+            wordRandom();
+            userWin.textContent = resultado;
+            console.log(randomItem);
+            console.log("placeholder: " + resultado);
+            estadoJuego = 1;
+            break;
+
+        case 3:
+            guessed="";
             alreadyGuessed.textContent = "";
             resultado = "";
             numGuess = 15;
@@ -153,6 +166,7 @@ var chartGuessed=[""];
             console.log("placeholder: " + resultado);
             estadoJuego = 1;
             break;
+        
     }
 
 }
